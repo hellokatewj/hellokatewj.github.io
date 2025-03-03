@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>HDU_2018 母牛的故事</title>
+    <link href="/2013/02/03/index/"/>
+    <url>/2013/02/03/index/</url>
+    
+    <content type="html"><![CDATA[<h3 id="实现思路："><a href="#实现思路：" class="headerlink" title="实现思路："></a>实现思路：</h3><p>母牛的故事只要掌握计算公式就比较简单，如：</p><table><thead><tr><th>年份</th><th>总头数</th><th>新生牛</th></tr></thead><tbody><tr><td>第一年</td><td>1</td><td>0</td></tr><tr><td>第二年</td><td>2</td><td>1</td></tr><tr><td>第三年</td><td>3</td><td>1</td></tr><tr><td>第四年</td><td>4</td><td>1</td></tr><tr><td>第五年</td><td>6</td><td>2</td></tr><tr><td>第六年</td><td>9</td><td>3</td></tr><tr><td>第七年</td><td>13</td><td>4</td></tr><tr><td>第八年</td><td>19</td><td>6</td></tr><tr><td>第九年</td><td>28</td><td>9</td></tr><tr><td>第十年</td><td>41</td><td>13</td></tr></tbody></table><p>容易看出这是一个数组，且a[i]  &#x3D; a[i - 1] + a[i - 3]，这样就变成了一个简单的问题。</p><h3 id="代码实现："><a href="#代码实现：" class="headerlink" title="代码实现："></a>代码实现：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-type">int</span> n, a[<span class="hljs-number">100</span>];<br><span class="hljs-keyword">while</span> (cin &gt;&gt; n)<br>&#123;<br><span class="hljs-keyword">if</span> (n != <span class="hljs-number">0</span>)<br>&#123;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i ++)<br>&#123;<br><span class="hljs-keyword">if</span> (i &gt;= <span class="hljs-number">1</span> &amp;&amp; i &lt;= <span class="hljs-number">4</span>)<br>a[i] = i;<br><span class="hljs-keyword">else</span> <br>&#123;<br>a[i] = a[i <span class="hljs-number">-1</span>] + a[i - <span class="hljs-number">3</span>];<br>&#125; <br>&#125;<br>cout &lt;&lt; a[n] &lt;&lt; endl;<br>&#125;<br><br><span class="hljs-keyword">else</span> <span class="hljs-keyword">continue</span>;<br>&#125;<br><br><span class="hljs-built_in">system</span> (<span class="hljs-string">&quot;pause&quot;</span>);<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>​</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2013/02/03/hello-world/"/>
+    <url>/2013/02/03/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
